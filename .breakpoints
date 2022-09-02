@@ -1,0 +1,12 @@
+{
+  "files": {
+    "middleware/auth.js": [
+      {
+        "id": "c6d39366-7d17-4185-9572-69788d3cf960",
+        "line": 10,
+        "version": 1,
+        "index": 179
+      }
+    ]
+  }
+}

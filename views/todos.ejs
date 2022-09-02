@@ -10,9 +10,21 @@
 <body>
     <h1>Todos</h1>
     <ul>
-    <% todos.forEach( el => { %>
+    <% todosActive.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                <!--<span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span> -->
+                <span class='not'><%= el.todo %></span>
+                <span class='not'>Due: <%= el.dueDate.toLocaleDateString() %></span>
+                <span class='del'> Delete </span>
+            </li>
+    <% }) %>    
+    </ul>
+
+    <ul>
+    <% todosCompleted.forEach( el => { %>
+            <li class='todoItem' data-id='<%=el._id%>'>
+                <span class='completed'><%= el.todo %></span>
+                <span class='completed'>Due: <%= el.dueDate.toLocaleDateString() %></span>
                 <span class='del'> Delete </span>
             </li>
     <% }) %>    
@@ -22,6 +34,7 @@
 
     <form action="/todos/createTodo" method='POST'>
         <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+        <input type="date" onload="getDate()" placeholder="Pick a due date" id="dueDate" name='dueDate'> 
         <input type="submit">
     </form>
 
