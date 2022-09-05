@@ -21,8 +21,10 @@ body{
 
 .completed{
     text-decoration: line-through;
-    color: gray;
+    color: rgb(187, 187, 187);
+    font-weight: normal;
 }
 .not{
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: bold;
 }

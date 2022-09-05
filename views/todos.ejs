@@ -5,52 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Link to External css -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- <link rel="stylesheet" href="/css/index.css"> -->
+    <link rel="stylesheet" href="/css/todos.css">
 </head>
 <body>
   
     <h1>Todos</h1>
-    <ul id="todoItemsIncomplete">
-    <% todosActive.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <!--<span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span> -->
-              <span class='not'><%= el.todo %></span>
-              <% if(el.dueDate != null){ %>
-                <span class="dueDate">Due: <%= el.dueDate.toLocaleDateString() %></span>
-              <% } %>
-                <span class='del'> Delete </span>
-            </li>
-    <% }) %>    
-    </ul>
-
-    <ul>
-    <% todosCompleted.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='completed'><%= el.todo %></span>
-              <% if(el.dueDate != null){ %>
-                <span class='completed'>Due: <%= el.dueDate.toLocaleDateString() %></span>
-              <% } %>
-                <span class='del'> Delete </span>
-            </li>
-    <% }) %>    
-    </ul>
+    <section class="container notCompleted">
+      <ul class="content" id="todoItemsIncomplete">
+      <% todosActive.forEach( el => { %>
+              <li class='todoItem' data-id='<%=el._id%>'>
+                  <!--<span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span> -->
+                <span class='not'><%= el.todo %></span>
+                <% if(el.dueDate != null){ %>
+                  <span class="dueDate">Due: <%= el.dueDate.toLocaleDateString() %></span>
+                <% } %>
+                  <span class='del'> Delete </span>
+              </li>
+      <% }) %>    
+      </ul>
+    </section>
+    <section class="container completed">
+      <ul class="content">
+      <% todosCompleted.forEach( el => { %>
+              <li class='todoItem' data-id='<%=el._id%>'>
+                  <span class='completed'><%= el.todo %></span>
+                <% if(el.dueDate != null){ %>
+                  <span class='completed'>Due: <%= el.dueDate.toLocaleDateString() %></span>
+                <% } %>
+                  <span class='del'> Delete </span>
+              </li>
+      <% }) %>    
+      </ul>
+    </section>
 
     <h2><%= user.userName %> has <%= left %> things left to do.</h2>
-
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <label for="group-choice">Category:</label>
-    <select name="group" id="group-choice">
-      <option value="">-Category-</option>
-      <option value="work">Work</option>
-      <option value="food">Food</option>
-      <option value="exercise">Exercise</option>
-      <option value="other">Other</option>
-</select>
-        <input type="date" onload="getDate()" placeholder="Pick a due date" id="dueDate" name='dueDate'> 
-        <input type="submit">
-    </form>
-
+    
+    <section class="container">
+      <form action="/todos/createTodo" method='POST'>
+          <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+          <label for="group-choice">Category:</label>
+            <select name="group" id="group-choice">
+              <option value="">-Category-</option>
+              <option value="work">Work</option>
+              <option value="food">Food</option>
+              <option value="exercise">Exercise</option>
+              <option value="other">Other</option>
+            </select>
+          <input type="date" onload="getDate()" placeholder="Pick a due date" id="dueDate" name='dueDate'> 
+          <button class="submit" name="submit">Submit</button>
+      </form>
+    </section>
 
     <a href="/logout">Logout</a>
 
