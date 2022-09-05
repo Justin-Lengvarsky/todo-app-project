@@ -1,0 +1,93 @@
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content{
+position: relative;
+border-radius: 10px;
+background-color: rgba(255, 255, 255, 0.1);
+box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4);
+min-height: 350px;
+width: 450px;
+text-align: center;
+}
+
+.content span{
+color: cyan;
+}
+
+.card{
+padding: 3em;
+display: flex;
+flex-direction: column;
+gap: 4em;
+justify-content: center;
+align-items: center;
+}
+
+.btns{
+display: flex;
+justify-content: space-between; 
+gap: 1em;
+}
+
+.btn{
+padding: 1em 4em;
+background:  linear-gradient(90deg, #461652 0%,#5A6CCE 100%);
+color: #fff;
+border-radius: 7px;
+border: 2px solid rgba(249, 249, 249, 0.1);
+box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+}
+
+.btn:hover{
+  box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+  transform: scale(1.05);
+  border-color: rgba(249, 249, 249, 0.8);
+  color: cyan;
+}
+
+
+.box{
+padding: 16px;
+display: flex;
+justify-content: center;
+align-content: center;
+margin: 0 auto;
+}
+
+.center {
+background-color: #461652;
+padding: 50px;
+border-radius: 12px;
+height: 350px;
+width: 450px;
+text-align: left;
+}
+
+#Email, #Password {
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: block;
+box-sizing: border-box;
+border-radius: 12px;
+border: 1px black solid;
+}
+
+.log{
+padding: 0 0 20px 0;
+}
+
+
+
+
+
+

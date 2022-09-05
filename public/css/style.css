@@ -1,6 +1,24 @@
-h1{
-    color: red;
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Rubik:wght@400;500;700&family=Space+Grotesk&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
+
+body{
+  background:  linear-gradient(90deg, #2A1534 0%,#7C81B8 100%);
+  font-family: 'Space Grotesk', sans-serif;
+  color: #fff;
+}
+
+
+
+/* font-family: 'Rubik', sans-serif; */
+
+
 .completed{
     text-decoration: line-through;
     color: gray;
