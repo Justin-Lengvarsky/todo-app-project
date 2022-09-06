@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="/css/style.css">
     <!-- <link rel="stylesheet" href="/css/index.css"> -->
     <link rel="stylesheet" href="/css/todos.css">
+
+    <!-- font awesome cdn link  -->
+    <script src="https://kit.fontawesome.com/ffefa2702e.js" crossorigin="anonymous"></script>
 </head>
 <body>
   
@@ -19,11 +22,12 @@
       <% todosActive.forEach( el => { %>
               <li class='todoItem' data-id='<%=el._id%>'>
                   <!--<span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span> -->
+                <span class="category"><%= el.group.toUpperCase() %></span>
                 <span class='not'><%= el.todo %></span>
                 <% if(el.dueDate != null){ %>
                   <span class="dueDate">Due: <%= el.dueDate.toLocaleDateString() %></span>
                 <% } %>
-                  <span class='del'> Delete </span>
+                  <span class='del'><i class="fa-solid fa-trash-can"></i></span>
               </li>
       <% }) %>    
       </ul>
@@ -36,7 +40,7 @@
                 <% if(el.dueDate != null){ %>
                   <span class='completed'>Due: <%= el.dueDate.toLocaleDateString() %></span>
                 <% } %>
-                  <span class='del'> Delete </span>
+                  <span class='del'><i class="fa-solid fa-trash-can"></i></span>
               </li>
       <% }) %>    
       </ul>

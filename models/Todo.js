@@ -5,6 +5,10 @@ const TodoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  group: {
+    type: String,
+    required: false,
+  },
   dueDate: {
     type: Date,
     required: false

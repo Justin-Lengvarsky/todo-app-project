@@ -52,12 +52,14 @@ li {
     transform: scale(1.05);
     border-color: rgba(249, 249, 249, 0.8);
     color: cyan;
+    cursor: pointer;
 }
 
 a[href*='logout'] {
     position: absolute;
     right: 0;
     padding: 20px;
+    cursor: pointer;
 }
 
 /* media queries */
