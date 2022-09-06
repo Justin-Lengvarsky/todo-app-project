@@ -17,12 +17,13 @@
 <body>
   
     <h1>Todos</h1>
+    <h3 class="sectionTitle">Left to do:</h3>
     <section class="container notCompleted">
       <ul class="content" id="todoItemsIncomplete">
       <% todosActive.forEach( el => { %>
               <li class='todoItem' data-id='<%=el._id%>'>
                   <!--<span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span> -->
-                <span class="category"><%= el.group.toUpperCase() %></span>
+                <span class="category <%= el.group === 'work' ? 'work' : el.group === 'food' ? 'food' : el.group === 'exercise' ? 'exercise' : el.group === 'other' ? 'other' : 'none' %>"><%= el.group.toUpperCase() %></span>
                 <span class='not'><%= el.todo %></span>
                 <% if(el.dueDate != null){ %>
                   <span class="dueDate">Due: <%= el.dueDate.toLocaleDateString() %></span>
@@ -32,11 +33,13 @@
       <% }) %>    
       </ul>
     </section>
+    <h3 class="sectionTitle">Completed:</h3>
     <section class="container completed">
       <ul class="content">
       <% todosCompleted.forEach( el => { %>
               <li class='todoItem' data-id='<%=el._id%>'>
-                  <span class='completed'><%= el.todo %></span>
+                <span class="category"><%= el.group.toUpperCase() %></span>
+                <span class='completed'><%= el.todo %></span>
                 <% if(el.dueDate != null){ %>
                   <span class='completed'>Due: <%= el.dueDate.toLocaleDateString() %></span>
                 <% } %>
@@ -48,7 +51,7 @@
 
     <h2><%= user.userName %> has <%= left %> things left to do.</h2>
     
-    <section class="container">
+    <section class="container form">
       <form action="/todos/createTodo" method='POST'>
           <input type="text" placeholder="Enter Todo Item" name='todoItem'>
           <label for="group-choice">Category:</label>
