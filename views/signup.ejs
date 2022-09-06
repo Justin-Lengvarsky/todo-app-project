@@ -5,19 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+<!-- Link to External css -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/signUp.css">
+
+  <!-- font awesome cdn link  -->
+    <script src="https://kit.fontawesome.com/ffefa2702e.js" crossorigin="anonymous"></script>
+  
 </head>
 <body>
-    <% if (locals.messages.errors) { %>
+
+
+   <div class="container">
+      <div class="content">
+        <div class="card">
+
+          <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
-    <form action="/signup" method="POST">
-        <input type="text" name="userName" placeholder="User Name">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" name="confirmPassword" placeholder="Confirm Password">
-        <input type="submit">
+    <form class="form-style" action="/signup" method="POST">
+      
+       <div class="flexIt"><i class="fa-solid fa-user"></i> <input class="input-style" type="text" name="userName" placeholder="User Name"></div> 
+      
+       <div class="flexIt"><i class="fa-solid fa-envelope"></i> <input class="input-style" type="email" name="email" placeholder="Email"></div>
+        
+
+        <div class="flexIt"><i class="fa-solid fa-lock"></i> <input class="input-style" type="password" name="password" placeholder="Password"></div>
+        
+
+        <div class="flexIt"><i class="fa-solid fa-lock"></i> <input class="input-style" type="password" name="confirmPassword" placeholder="Confirm Password"></div>
+        
+        <input class="btn" type="submit">
     </form>
+          
+        </div>
+      </div> 
+    </div>
+
+
+
+
+
+  
+    
 </body>
 </html>

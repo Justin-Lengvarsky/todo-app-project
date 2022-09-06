@@ -7,11 +7,11 @@ const TodoSchema = new mongoose.Schema({
   },
   group: {
     type: String,
-    required: true,
+    required: false,
   },
   dueDate: {
     type: Date,
-    required: true,
+    required: false
   },
   completed: {
     type: Boolean,
