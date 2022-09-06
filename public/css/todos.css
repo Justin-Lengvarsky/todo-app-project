@@ -13,7 +13,7 @@ h3 {
 }
 
 li {
-    padding: 5px;
+    padding: 8px;
 }
 
 .container {
@@ -59,6 +59,18 @@ button:hover{
     cursor: pointer;
 }
 
+.catBtn{
+    display: inline-block;
+    min-width: 100px;
+    padding: 1em;
+    border-radius: 45%;
+}
+
+nav {
+    width: fit-content;
+    margin: 0 auto;
+}
+
 a[href*='logout'] {
     position: absolute;
     right: 0;
@@ -66,8 +78,18 @@ a[href*='logout'] {
     cursor: pointer;
     font-weight: bold;
 }
+.del {
+    cursor: pointer;
+}
 
-.work {
+.category {
+    display: inline;
+    background-color: rgba(255, 255, 255, 0.595);
+    padding: 2px;
+    border-radius: 10%;
+    font-weight: bold;
+}
+.work{
     color: purple;
 }
 .food{
@@ -78,6 +100,9 @@ a[href*='logout'] {
 }
 .other{
     color: blue;
+}
+.none{
+    background-color: transparent;
 }
 
 /* media queries */

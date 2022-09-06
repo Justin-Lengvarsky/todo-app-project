@@ -17,11 +17,18 @@
 <body>
   
     <h1>Todos</h1>
+    <nav>
+      <button class="catBtn allCat">All</button>
+      <button class="catBtn workCat">Work</button>
+      <button class="catBtn foodCat">Food</button>
+      <button class="catBtn exerCat">Exercise</button>
+      <button class="catBtn othCat">Other</button>
+    </nav>  
     <h3 class="sectionTitle">Left to do:</h3>
     <section class="container notCompleted">
       <ul class="content" id="todoItemsIncomplete">
       <% todosActive.forEach( el => { %>
-              <li class='todoItem' data-id='<%=el._id%>'>
+              <li class="todoItem <%= el.group === 'work' ? 'workGroup' : el.group === 'food' ? 'foodGroup' : el.group === 'exercise' ? 'exerciseGroup' : el.group === 'other' ? 'otherGroup' : 'noneGroup' %>" data-id='<%=el._id%>'>
                   <!--<span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span> -->
                 <span class="category <%= el.group === 'work' ? 'work' : el.group === 'food' ? 'food' : el.group === 'exercise' ? 'exercise' : el.group === 'other' ? 'other' : 'none' %>"><%= el.group.toUpperCase() %></span>
                 <span class='not'><%= el.todo %></span>
@@ -38,7 +45,7 @@
       <ul class="content">
       <% todosCompleted.forEach( el => { %>
               <li class='todoItem' data-id='<%=el._id%>'>
-                <span class="category"><%= el.group.toUpperCase() %></span>
+                <span><%= el.group.toUpperCase() %></span>
                 <span class='completed'><%= el.todo %></span>
                 <% if(el.dueDate != null){ %>
                   <span class='completed'>Due: <%= el.dueDate.toLocaleDateString() %></span>
