@@ -44,7 +44,7 @@
     <section class="container completed">
       <ul class="content">
       <% todosCompleted.forEach( el => { %>
-              <li class='todoItem' data-id='<%=el._id%>'>
+              <li class="todoItem <%= el.group === 'work' ? 'workGroup' : el.group === 'food' ? 'foodGroup' : el.group === 'exercise' ? 'exerciseGroup' : el.group === 'other' ? 'otherGroup' : 'noneGroup' %>" data-id='<%=el._id%>'>
                 <span><%= el.group.toUpperCase() %></span>
                 <span class='completed'><%= el.todo %></span>
                 <% if(el.dueDate != null){ %>

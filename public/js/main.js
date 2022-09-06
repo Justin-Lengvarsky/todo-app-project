@@ -108,45 +108,21 @@ speech();
 
 
 function displayCategory(click){
-  const workTodos = document.querySelectorAll('.workGroup')
-  const foodTodos = document.querySelectorAll('.foodGroup')
-  const exerTodos = document.querySelectorAll('.exerciseGroup')
-  const othTodos = document.querySelectorAll('.otherGroup')
-  const noCatTodos = document.querySelectorAll('.noneGroup')
+  const allTodos = document.querySelectorAll('.todoItem')
   if(click.target.classList.contains('workCat')){
     console.log('work')
-    Array.from(workTodos).forEach(el => el.style.display = 'block')
-    Array.from(foodTodos).forEach(el => el.style.display = 'none')
-    Array.from(exerTodos).forEach(el => el.style.display = 'none')
-    Array.from(othTodos).forEach(el => el.style.display = 'none')
-    Array.from(noCatTodos).forEach(el => el.style.display = 'none')
+    Array.from(allTodos).forEach(el => el.classList.contains('workGroup') ? el.style.display = 'block' : el.style.display = 'none')
   }else if(click.target.classList.contains('foodCat')){
     console.log('food')
-    Array.from(workTodos).forEach(el => el.style.display = 'none')
-    Array.from(foodTodos).forEach(el => el.style.display = 'block')
-    Array.from(exerTodos).forEach(el => el.style.display = 'none')
-    Array.from(othTodos).forEach(el => el.style.display = 'none')
-    Array.from(noCatTodos).forEach(el => el.style.display = 'none')
+    Array.from(allTodos).forEach(el => el.classList.contains('foodGroup') ? el.style.display = 'block' : el.style.display = 'none')
   }else if(click.target.classList.contains('exerCat')){
     console.log('exercise')
-    Array.from(workTodos).forEach(el => el.style.display = 'none')
-    Array.from(foodTodos).forEach(el => el.style.display = 'none')
-    Array.from(exerTodos).forEach(el => el.style.display = 'block')
-    Array.from(othTodos).forEach(el => el.style.display = 'none')
-    Array.from(noCatTodos).forEach(el => el.style.display = 'none')
+    Array.from(allTodos).forEach(el => el.classList.contains('exerciseGroup') ? el.style.display = 'block' : el.style.display = 'none')
   }else if(click.target.classList.contains('othCat')){
     console.log('other')
-    Array.from(workTodos).forEach(el => el.style.display = 'none')
-    Array.from(foodTodos).forEach(el => el.style.display = 'none')
-    Array.from(exerTodos).forEach(el => el.style.display = 'none')
-    Array.from(othTodos).forEach(el => el.style.display = 'block')
-    Array.from(noCatTodos).forEach(el => el.style.display = 'none')
+    Array.from(allTodos).forEach(el => el.classList.contains('otherGroup') ? el.style.display = 'block' : el.style.display = 'none')
   }else{
     console.log('all')
-    Array.from(workTodos).forEach(el => el.style.display = 'block')
-    Array.from(foodTodos).forEach(el => el.style.display = 'block')
-    Array.from(exerTodos).forEach(el => el.style.display = 'block')
-    Array.from(othTodos).forEach(el => el.style.display = 'block')
-    Array.from(noCatTodos).forEach(el => el.style.display = 'block')
+    Array.from(allTodos).forEach(el => el.style.display = 'block')
   }
 }

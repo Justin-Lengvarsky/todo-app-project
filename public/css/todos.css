@@ -60,6 +60,7 @@ button:hover{
 }
 
 .catBtn{
+    background: #744ab2;
     display: inline-block;
     min-width: 100px;
     padding: 1em;
